@@ -621,3 +621,4 @@ a.tile--blue.c-tile:hover{background:var(--ink);border-color:var(--ink)}
 .tech-list li{background:rgba(246,245,240,.08)}
 .tech-list li::before{background:var(--blue-tint)}
 .p-card,.pd-media,.g-tile{transition:background-color .8s}
+.portrait img{object-position:center 30%;transition:transform 1.2s var(--ease-out)}.portrait:hover img{transform:scale(1.03)}
