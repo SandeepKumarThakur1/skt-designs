@@ -350,13 +350,73 @@
     }
     return '<div class="mock" aria-hidden="true"><div class="mock-browser"><div class="mock-bar"><i></i><i></i><i></i><b></b></div><div class="mock-body"><div class="mock-nav"><b></b><span><i></i><i></i><i></i></span></div><div class="mock-hero"><div class="txt"><i></i><i></i><i></i><i></i><u></u></div><div class="art"></div></div><div class="mock-cards"><i></i><i></i><i></i></div></div></div></div>';
   }
+
+  /* ---------- live screenshots (WordPress mShots) ---------- */
+  function domainOf(u) { return (u || '').replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
+  function shotURL(url, mobile) {
+    return 'https://s0.wp.com/mshots/v1/' + encodeURIComponent(url) +
+      (mobile ? '?w=390&h=844&vpw=390&vph=844' : '?w=1280&h=860&vpw=1440&vph=960');
+  }
+  function visualHTML(p, mode) {
+    var mobile = mode === 'mobile';
+    var src = (!mobile && p.image) ? p.image : (mobile && p.imageMobile) ? p.imageMobile : (p.url ? shotURL(p.url, mobile) : '');
+    var fallback = mockHTML(Object.assign({}, p, mobile ? { mock: 'phones' } : (p.mock === 'phones' ? { mock: 'browser' } : {})));
+    if (!src) return fallback;
+    var local = (!mobile && p.image) || (mobile && p.imageMobile);
+    var img = '<img alt="Screenshot of the ' + p.title + ' website' + (mobile ? ' on mobile' : '') + '" loading="lazy" decoding="async" data-shot="' + src + '"' + (local ? ' data-local="1"' : '') + (p.brand ? '' : ' data-sample="' + p.slug + '"') + '>';
+    var shot = mobile
+      ? '<div class="shot shot--mob"><div class="shot-img">' + img + '</div></div>'
+      : '<div class="shot shot--desk"><div class="shot-bar"><i></i><i></i><i></i><span>' + domainOf(p.url) + '</span></div><div class="shot-img">' + img + '</div></div>';
+    return '<div class="vis">' + fallback + shot + '</div>';
+  }
+  function hexOf(r, g, b) { return '#' + [r, g, b].map(function (v) { return ('0' + Math.round(v).toString(16)).slice(-2); }).join('').toUpperCase(); }
+  // Try to read the client's main colour from the screenshot (only works if the image server allows it)
+  function sampleBrand(src, slug) {
+    var im = new Image(); im.crossOrigin = 'anonymous';
+    im.onload = function () {
+      try {
+        var c = document.createElement('canvas'), W = 48, H = 32; c.width = W; c.height = H;
+        var x = c.getContext('2d'); x.drawImage(im, 0, 0, W, H);
+        var d = x.getImageData(0, 0, W, H).data, buckets = {};
+        for (var i = 0; i < d.length; i += 4) {
+          var r = d[i], g = d[i + 1], b = d[i + 2], mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+          var sat = mx ? (mx - mn) / mx : 0;
+          if (sat < .28 || mx < 40 || mx > 250 && mn > 235) continue; // skip greys, black, white
+          var k = (r >> 5) + ',' + (g >> 5) + ',' + (b >> 5);
+          var bk = buckets[k] || (buckets[k] = { n: 0, r: 0, g: 0, b: 0 });
+          bk.n++; bk.r += r; bk.g += g; bk.b += b;
+        }
+        var best = null; Object.keys(buckets).forEach(function (k) { if (!best || buckets[k].n > best.n) best = buckets[k]; });
+        if (!best || best.n < 20) return;
+        var col = hexOf(best.r / best.n, best.g / best.n, best.b / best.n);
+        $$('[data-brand-target="' + slug + '"]').forEach(function (el) { el.style.setProperty('--c1', col); });
+      } catch (e) { /* image server doesn't allow colour reading — keep neutral */ }
+    };
+    im.src = src;
+  }
+  function loadShots(scope) {
+    $$('img[data-shot]', scope).forEach(function (img) {
+      if (img._init) return; img._init = true;
+      var src = img.getAttribute('data-shot'), tries = 0, local = img.hasAttribute('data-local');
+      var shot = img.closest('.shot'), vis = img.closest('.vis');
+      img.onload = function () {
+        // mShots returns a small "generating…" image the first time — retry until the real screenshot is ready
+        var gen = img.naturalHeight <= img.naturalWidth && img.naturalWidth < 600;
+        if (!local && gen && tries < 8) { tries++; setTimeout(function () { img.src = src + '&r=' + tries; }, 3500); return; }
+        if (shot) shot.classList.add('loaded'); if (vis) vis.classList.add('has-shot');
+        var slug = img.getAttribute('data-sample'); if (slug && !local) sampleBrand(img.src, slug);
+      };
+      img.onerror = function () { if (shot) shot.remove(); };
+      img.src = src;
+    });
+  }
   var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-  var SPANS = [7, 5, 5, 7, 6, 6];
+  var SPANS = [7, 5, 5, 7, 4, 4, 4];
   function card(p, i) {
-    return '<a class="p-card pop c-' + SPANS[i % SPANS.length] + '" style="' + vars(p) + ';--i:' + (i % 2) + '" href="project-details.html?p=' + p.slug + '" data-cats="' + p.cats.join(' ') + '" data-cursor="View" data-label="' + p.title + '">' +
-      '<div class="p-top"><span>' + (i < 9 ? '0' : '') + (i + 1) + '</span><span>' + p.tags.join(' · ') + '</span></div>' +
-      '<div class="p-media">' + mockHTML(p) + '</div>' +
-      '<div class="p-bar"><div><h3>' + p.title + '</h3><p>' + p.type + '</p></div><span class="p-go">' + ARROW + '</span></div></a>';
+    return '<a class="p-card pop c-' + SPANS[i % SPANS.length] + '" style="' + vars(p) + ';--i:' + (i % 2) + '" href="project-details.html?p=' + p.slug + '" data-cats="' + p.cats.join(' ') + '" data-cursor="View" data-label="' + p.title + '" data-brand-target="' + p.slug + '">' +
+      '<div class="p-top"><span>' + (i < 9 ? '0' : '') + (i + 1) + '</span><span class="p-status' + (p.status === 'Live' ? ' live' : '') + '">' + (p.status || '') + '</span></div>' +
+      '<div class="p-media">' + visualHTML(p, 'desk') + '</div>' +
+      '<div class="p-bar"><div><h3>' + p.title + '</h3><p>' + p.type + (p.tech && p.tech.length ? ' · ' + p.tech[0] : '') + '</p></div><span class="p-go">' + ARROW + '</span></div></a>';
   }
   function initProjects() {
     var list = window.SKT_PROJECTS || [];
@@ -364,6 +424,7 @@
     if (grid) {
       var lim = parseInt(grid.getAttribute('data-limit') || '0', 10);
       grid.innerHTML = (lim ? list.slice(0, lim) : list).map(card).join('');
+      loadShots(grid);
     }
     $$('.filter-btn').forEach(function (b) {
       var f = b.getAttribute('data-filter');
@@ -391,13 +452,21 @@
     var idx = Math.max(0, list.findIndex(function (p) { return p.slug === slug; }));
     var p = list[idx], nx = list[(idx + 1) % list.length];
     document.title = p.title + ' — Case Study · Sandeep K. Thakur';
-    d.setAttribute('style', vars(p));
-    ['title', 'tagline', 'type', 'role', 'year', 'services', 'tools', 'summary', 'challenge', 'approach', 'solution'].forEach(function (k) {
-      $$('[data-f="' + k + '"]', d).forEach(function (n) { n.textContent = p[k]; });
+    d.setAttribute('style', vars(p)); d.setAttribute('data-brand-target', p.slug);
+    ['title', 'tagline', 'type', 'industry', 'location', 'status', 'summary'].forEach(function (k) {
+      $$('[data-f="' + k + '"]', d).forEach(function (n) { n.textContent = p[k] || '—'; });
     });
+    $$('[data-f="url"]', d).forEach(function (a) { if (p.url) a.href = p.url; else a.remove(); });
+    $$('[data-f="domain"]', d).forEach(function (n) { n.textContent = (p.url || '').replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); });
+    $$('[data-f="live-note"]', d).forEach(function (n) { n.textContent = p.status === 'Live' ? 'The website is live — have a look around.' : 'This project is in progress — preview the current version.'; });
+    var ft = $('[data-f="features"]', d);
+    if (ft) ft.innerHTML = (p.features || []).map(function (x, i) { return '<li style="--i:' + i + '">' + x + '</li>'; }).join('');
     var set = function (k, h) { var n = $('[data-f="' + k + '"]', d); if (n) n.innerHTML = h; };
-    set('hero', mockHTML(p));
-    set('g1', mockHTML(Object.assign({}, p, { mock: p.mock === 'phones' ? 'phones' : 'browser' })));
+    set('hero', visualHTML(p, 'desk'));
+    set('g1', visualHTML(p, 'mobile'));
+    set('tech', (p.tech && p.tech.length ? p.tech : ['Details coming soon']).map(function (t) { return '<li>' + t + '</li>'; }).join(''));
+    $$('[data-f="tech-short"]', d).forEach(function (n) { n.textContent = (p.tech && p.tech.length) ? p.tech.slice(0, 2).join(', ') : '—'; });
+    loadShots(d);
     set('g2', '<div class="type-spec" style="color:' + (isDark(p.c3) ? '#F6F5F0' : '#111111') + '"><span>Typeface</span><b>Aa</b><span>Headings · Body</span></div>');
     set('palette', '<div class="palette">' + [p.c1, p.c2, p.c3].map(function (c) { return '<span style="background:' + c + ';color:' + (isDark(c) ? '#F6F5F0' : '#111111') + '">' + c.toUpperCase() + '</span>'; }).join('') + '</div>');
     set('g4', mockHTML(Object.assign({}, p, { mock: p.mock === 'dashboard' ? 'dashboard' : (p.mock === 'phones' ? 'browser' : 'phones') })));
