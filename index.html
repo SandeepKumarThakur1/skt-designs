@@ -44,8 +44,11 @@
   <div class="nav-pill">
     <a class="logo" href="index.html" data-label="Home" aria-label="Sandeep K. Thakur — home"><span class="logo-mark">SKT</span><span>Sandeep K. Thakur</span></a>
     <nav class="nav" aria-label="Main"><a href="index.html"><span data-scramble>Home</span></a><a href="about.html"><span data-scramble>About</span></a><a href="services.html"><span data-scramble>Services</span></a><a href="projects.html"><span data-scramble>Projects</span></a><a href="contact.html"><span data-scramble>Contact</span></a></nav>
+    <div class="nav-actions">
+    <a href="assets/cv/resume.pdf" class="nav-cv magnetic" data-cv target="_blank" rel="noopener" data-label="Resume" aria-label="Open my resume / CV (opens in a new tab)"><span class="cv-full">Resume</span><span class="cv-short">CV</span><span class="cv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
     <a href="contact.html" class="btn magnetic btn--sm nav-cta" data-label="Contact" >Let's talk<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu"><span class="mb-txt">Menu</span><span class="bars" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
   </div>
 </header>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
@@ -54,7 +57,8 @@
     <a class="mm-tile" href="services.html" style="--i:2"><small>03</small><strong>Services</strong></a>
     <a class="mm-tile" href="projects.html" style="--i:3"><small>04</small><strong>Projects</strong></a>
     <a class="mm-tile" href="contact.html" style="--i:4"><small>05</small><strong>Contact</strong></a>
-    <div class="mm-tile wide" style="--i:5"><small>Say hello</small><a href="mailto:sktdesignsofficial@gmail.com">sktdesignsofficial@gmail.com</a><a href="tel:+918360201942">+91 83602 01942</a><span style="display:flex;gap:16px;flex-wrap:wrap"><a href="https://www.linkedin.com/in/sandeepkumarthakur1" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/SandeepKumarThakur1" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.behance.net/sktdesigns" target="_blank" rel="noopener">Behance ↗</a></span></div>
+    <a class="mm-tile mm-cv" href="assets/cv/resume.pdf" data-cv target="_blank" rel="noopener" style="--i:5"><small>06 · New tab ↗</small><strong>Resume</strong></a>
+    <div class="mm-tile wide" style="--i:6"><small>Say hello</small><a href="mailto:sktdesignsofficial@gmail.com">sktdesignsofficial@gmail.com</a><a href="tel:+918360201942">+91 83602 01942</a><span style="display:flex;gap:16px;flex-wrap:wrap"><a href="https://www.linkedin.com/in/sandeepkumarthakur1" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/SandeepKumarThakur1" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.behance.net/sktdesigns" target="_blank" rel="noopener">Behance ↗</a></span></div>
 </nav>
 <main id="main"><span id="top"></span>
 
@@ -72,6 +76,7 @@
             <a href="projects.html" class="btn magnetic " data-label="Projects" >View my work<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
             <a href="contact.html" class="btn btn--ghost magnetic" data-label="Contact">Hire me</a>
           </div>
+          <a href="#story-title" class="story-cue"><span class="cue-line" aria-hidden="true"></span>Scroll to read my story</a>
         </div>
       </div>
       <div class="tile hero-gfx c-5 pop" data-hero style="--i:1">
@@ -141,10 +146,122 @@
   </div>
 </section>
 
+<section class="section story" data-story aria-labelledby="story-title">
+  <div class="container">
+    <div class="story-head">
+      <span class="eyebrow fade" style="align-self:flex-start"><b>02</b>My story</span>
+      <h2 class="t-xl" id="story-title" data-rv>Five chapters,<br>one craft.</h2>
+      <p class="lead fade">How a curious question turned into a career designing and building websites — told the way I'd tell it over coffee.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-steps">
+        <article class="story-step is-on" data-step="0">
+          <div class="tile">
+            <span class="story-k">Chapter 01 · The spark</span>
+            <h3 class="t-md">It started with a question.</h3>
+            <p class="muted">Every website that felt good to use made me ask the same thing: <em>how does this work — and why does it feel so right?</em> I couldn't stop pulling pages apart to find out.</p>
+          </div>
+        </article>
+        <article class="story-step" data-step="1">
+          <div class="tile">
+            <span class="story-k">Chapter 02 · Learning to see</span>
+            <h3 class="t-md">Design taught me to notice.</h3>
+            <p class="muted">Spacing, type, colour, motion. I learned that good design isn't decoration — it's how people understand what to do next. Figma became my sketchbook.</p>
+          </div>
+        </article>
+        <article class="story-step" data-step="2">
+          <div class="tile">
+            <span class="story-k">Chapter 03 · Learning to build</span>
+            <h3 class="t-md">Code made it real.</h3>
+            <p class="muted">Beautiful screens weren't enough — I wanted them alive in the browser. HTML, CSS, JavaScript and React turned my designs into fast, responsive websites.</p>
+          </div>
+        </article>
+        <article class="story-step" data-step="3">
+          <div class="tile">
+            <span class="story-k">Chapter 04 · Closing the gap</span>
+            <h3 class="t-md">Then I stopped handing off.</h3>
+            <p class="muted">Because I both design and develop, nothing gets lost in translation. The design you approve is exactly what goes live — down to the last pixel and animation.</p>
+          </div>
+        </article>
+        <article class="story-step" data-step="4">
+          <div class="tile tile--blue">
+            <span class="story-k">Chapter 05 · Today</span>
+            <h3 class="t-md">Now I help brands tell theirs.</h3>
+            <p class="muted">From India, working with clients worldwide, I build websites that turn visitors into clients. The next chapter could be yours.</p>
+            <div class="story-cta">
+              <a href="contact.html" class="btn btn--light magnetic btn--sm" data-label="Contact">Start a project<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+              <a href="assets/cv/resume.pdf" class="link-arrow" data-cv target="_blank" rel="noopener" data-label="Resume">Read my resume ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="story-stage-wrap">
+        <div class="tile tile--dark story-stage" aria-hidden="true">
+          <div class="stage-top">
+            <span class="tile-label">Chapter <span class="stage-n">01</span> / 05</span>
+            <span class="stage-title">The spark</span>
+          </div>
+          <div class="stage-art">
+            <!-- 01 spark: empty browser + question -->
+            <svg class="sv on" data-sv="0" viewBox="0 0 400 300">
+              <rect class="dr" x="40" y="40" width="320" height="220" rx="18" fill="none" stroke="#8EA0FF" stroke-width="3"/>
+              <path class="dr" d="M40 80h320" stroke="#8EA0FF" stroke-width="3"/>
+              <circle cx="66" cy="60" r="6" fill="#F6F5F0" opacity=".5"/><circle cx="86" cy="60" r="6" fill="#F6F5F0" opacity=".3"/><circle cx="106" cy="60" r="6" fill="#F6F5F0" opacity=".2"/>
+              <text class="pop-in" x="200" y="200" text-anchor="middle" font-family="Bricolage Grotesque,system-ui" font-weight="800" font-size="110" fill="#2442FF">?</text>
+              <g class="spark"><path d="M290 110l6 16 16 6-16 6-6 16-6-16-16-6 16-6z" fill="#F6F5F0"/><path d="M110 200l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#8EA0FF"/></g>
+              <rect class="blink" x="236" y="128" width="4" height="56" fill="#F6F5F0"/>
+            </svg>
+            <!-- 02 design: pen tool + swatches -->
+            <svg class="sv" data-sv="1" viewBox="0 0 400 300">
+              <path class="dr" d="M50 220 C 110 60, 200 60, 210 150 S 300 250, 350 90" fill="none" stroke="#2442FF" stroke-width="6" stroke-linecap="round"/>
+              <line x1="50" y1="220" x2="110" y2="90" stroke="#5E5D58" stroke-width="2"/><line x1="210" y1="150" x2="170" y2="96" stroke="#5E5D58" stroke-width="2"/><line x1="210" y1="150" x2="250" y2="204" stroke="#5E5D58" stroke-width="2"/>
+              <g class="pop-in"><circle cx="110" cy="90" r="7" fill="#F6F5F0"/><circle cx="170" cy="96" r="7" fill="#F6F5F0"/><circle cx="250" cy="204" r="7" fill="#F6F5F0"/>
+              <rect x="40" y="210" width="20" height="20" fill="#111" stroke="#F6F5F0" stroke-width="3"/><rect x="200" y="140" width="20" height="20" fill="#2442FF" stroke="#F6F5F0" stroke-width="3"/><rect x="340" y="80" width="20" height="20" fill="#111" stroke="#F6F5F0" stroke-width="3"/></g>
+              <g class="pop-in d2"><circle cx="300" cy="250" r="14" fill="#2442FF"/><circle cx="332" cy="250" r="14" fill="#8EA0FF"/><circle cx="364" cy="250" r="14" fill="#F6F5F0"/></g>
+              <text class="pop-in d2" x="40" y="58" font-family="Bricolage Grotesque,system-ui" font-weight="700" font-size="28" fill="#F6F5F0">Aa</text>
+            </svg>
+            <!-- 03 code -->
+            <svg class="sv" data-sv="2" viewBox="0 0 400 300">
+              <path class="dr" d="M110 90 L60 150 L110 210" fill="none" stroke="#2442FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="dr" d="M290 90 L340 150 L290 210" fill="none" stroke="#2442FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="dr d2" d="M225 70 L175 230" stroke="#8EA0FF" stroke-width="8" stroke-linecap="round"/>
+              <g class="lines"><rect x="40" y="250" width="90" height="10" rx="5" fill="#8EA0FF"/><rect x="140" y="250" width="140" height="10" rx="5" fill="#5E5D58"/><rect x="290" y="250" width="70" height="10" rx="5" fill="#F6F5F0" opacity=".6"/>
+              <rect x="70" y="30" width="120" height="10" rx="5" fill="#5E5D58"/><rect x="200" y="30" width="80" height="10" rx="5" fill="#2442FF"/></g>
+            </svg>
+            <!-- 04 bridge: wireframe + code merge into one screen -->
+            <svg class="sv" data-sv="3" viewBox="0 0 400 300">
+              <g class="slide-l"><rect x="30" y="70" width="140" height="160" rx="12" fill="none" stroke="#8EA0FF" stroke-width="3" stroke-dasharray="8 6"/>
+                <rect x="48" y="90" width="70" height="10" rx="5" fill="#8EA0FF"/><rect x="48" y="110" width="104" height="44" rx="6" fill="none" stroke="#8EA0FF" stroke-width="2"/><rect x="48" y="166" width="50" height="16" rx="8" fill="#8EA0FF"/></g>
+              <g class="slide-r"><rect x="230" y="70" width="140" height="160" rx="12" fill="#1c1c1c" stroke="#5E5D58" stroke-width="2"/>
+                <rect x="246" y="92" width="60" height="8" rx="4" fill="#2442FF"/><rect x="258" y="110" width="90" height="8" rx="4" fill="#5E5D58"/><rect x="258" y="128" width="70" height="8" rx="4" fill="#8EA0FF"/><rect x="246" y="146" width="40" height="8" rx="4" fill="#2442FF"/></g>
+              <g class="merge"><rect x="110" y="60" width="180" height="180" rx="16" fill="#F6F5F0"/>
+                <rect x="128" y="80" width="80" height="12" rx="6" fill="#111"/><rect x="128" y="104" width="144" height="70" rx="10" fill="#2442FF"/><circle cx="246" cy="128" r="12" fill="#F6F5F0"/>
+                <rect x="128" y="190" width="70" height="26" rx="13" fill="#111"/><text x="236" y="210" text-anchor="middle" font-family="Manrope,system-ui" font-weight="800" font-size="16" fill="#2442FF">✓ live</text></g>
+            </svg>
+            <!-- 05 today: globe -->
+            <svg class="sv" data-sv="4" viewBox="0 0 400 300">
+              <circle class="dr" cx="200" cy="150" r="100" fill="none" stroke="#8EA0FF" stroke-width="3"/>
+              <ellipse class="dr" cx="200" cy="150" rx="44" ry="100" fill="none" stroke="#5E5D58" stroke-width="2"/>
+              <path class="dr" d="M100 150h200M116 100h168M116 200h168" stroke="#5E5D58" stroke-width="2"/>
+              <g class="orbit"><circle cx="200" cy="30" r="9" fill="#2442FF"/><circle cx="320" cy="150" r="7" fill="#F6F5F0"/><circle cx="90" cy="230" r="8" fill="#8EA0FF"/></g>
+              <g class="pop-in d2"><circle cx="232" cy="118" r="10" fill="#2442FF"/><circle cx="232" cy="118" r="20" fill="none" stroke="#2442FF" stroke-width="2" class="ping-ring"/></g>
+            </svg>
+          </div>
+          <div class="stage-foot">
+            <div class="stage-dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+            <div class="stage-bar"><b></b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
-      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>02</b>Services</span><h2 class="t-xl" data-rv>What I can do<br>for you.</h2></div>
+      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>03</b>Services</span><h2 class="t-xl" data-rv>What I can do<br>for you.</h2></div>
       <a href="services.html" class="link-arrow fade" data-label="Services">All services <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
     <div class="stack">
@@ -195,7 +312,7 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:32px">
-      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>03</b>Selected work</span><h2 class="t-xl" data-rv>Recent client work.</h2></div>
+      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>04</b>Selected work</span><h2 class="t-xl" data-rv>Recent client work.</h2></div>
       <a href="projects.html" class="link-arrow fade" data-label="Projects">All projects <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
     <div class="bento" data-projects data-limit="4"></div>
@@ -234,7 +351,7 @@
       </div>
       <div class="tile c-3 pop" style="--i:1">
         <span class="tile-label">Pages</span>
-        <ul class="f-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul>
+        <ul class="f-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li><li><a href="assets/cv/resume.pdf" data-cv target="_blank" rel="noopener">Resume / CV ↗</a></li></ul>
       </div>
       <div class="tile c-3 pop" style="--i:2">
         <span class="tile-label">Contact</span>

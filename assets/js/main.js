@@ -11,6 +11,11 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var EMAIL = 'sktdesignsofficial@gmail.com';
+  /* RESUME / CV — paste your Google Drive share link here (e.g.
+     'https://drive.google.com/file/d/XXXX/view?usp=sharing'). Leave it empty
+     to use the PDF at assets/cv/resume.pdf instead. Every "Resume" link on
+     the site (header, mobile menu, footer, story) updates from this one line. */
+  var CV_URL = '';
   /* Contact form delivery. After you confirm FormSubmit's activation email,
      you can replace the email in this URL with the random alias they send you
      (hides your address from spam bots). */
@@ -280,6 +285,41 @@
         nx.classList.remove('off'); nx.classList.add('on');
         setTimeout(function () { cur.classList.remove('off'); }, 800);
       }, 2200);
+    });
+  }
+
+  /* ---------- resume / CV links ---------- */
+  function initCv() {
+    if (!CV_URL) return;
+    $$('[data-cv]').forEach(function (a) { a.setAttribute('href', CV_URL); });
+  }
+
+  /* ---------- story: scroll-driven chapters ---------- */
+  function initStory() {
+    $$('[data-story]').forEach(function (sec) {
+      var steps = $$('.story-step', sec), svs = $$('.sv', sec), dots = $$('.stage-dots i', sec);
+      var n = $('.stage-n', sec), title = $('.stage-title', sec), bar = $('.stage-bar b', sec), list = $('.story-steps', sec);
+      var names = steps.map(function (s) { var k = $('.story-k', s); return k ? k.textContent.split('·').pop().trim() : ''; });
+      var cur = -1;
+      function set(i) {
+        if (i === cur) return; cur = i;
+        steps.forEach(function (s, j) { s.classList.toggle('is-on', j === i); });
+        svs.forEach(function (s, j) { s.classList.toggle('on', j === i); });
+        dots.forEach(function (d, j) { d.classList.toggle('on', j <= i); });
+        if (n) n.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+        if (title) title.textContent = names[i] || '';
+      }
+      function up() {
+        var line = innerHeight * (innerWidth <= 900 ? .82 : .55), i = 0;
+        steps.forEach(function (s, j) { if (s.getBoundingClientRect().top < line) i = j; });
+        set(i);
+        if (bar && list) {
+          var r = list.getBoundingClientRect();
+          bar.style.transform = 'scaleX(' + clamp((line - r.top) / r.height, 0, 1) + ')';
+        }
+      }
+      set(0);
+      addEventListener('scroll', up, { passive: true }); addEventListener('resize', up); up();
     });
   }
 
@@ -578,6 +618,8 @@
   initInView();
   initStatement();
   initRotator();
+  initCv();
+  initStory();
   initStack();
   initTimeline();
   initGfx();

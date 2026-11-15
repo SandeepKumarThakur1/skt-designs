@@ -622,3 +622,85 @@ a.tile--blue.c-tile:hover{background:var(--ink);border-color:var(--ink)}
 .tech-list li::before{background:var(--blue-tint)}
 .p-card,.pd-media,.g-tile{transition:background-color .8s}
 .portrait img{object-position:center 30%;transition:transform 1.2s var(--ease-out)}.portrait:hover img{transform:scale(1.03)}
+
+/* =========================================================
+   RESUME / CV — header pill
+   ========================================================= */
+.nav-actions{display:flex;align-items:center;gap:8px}
+.nav-cv{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 6px 0 18px;border-radius:999px;font-weight:700;font-size:15px;
+  color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(17,17,17,.14);transition:background .3s,color .3s,box-shadow .3s}
+.nav-cv .cv-ic{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);transition:transform .5s var(--ease),background .3s,color .3s}
+.nav-cv .cv-ic svg{width:15px;height:15px}
+.nav-cv:hover{background:var(--ink);color:var(--light);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.nav-cv:hover .cv-ic{transform:rotate(45deg);background:var(--blue);color:var(--light)}
+.nav-cv .cv-short{display:none}
+@media (max-width:960px){.nav-cv{height:44px;padding-left:14px}.nav-cv .cv-ic{width:30px;height:30px}}
+@media (max-width:420px){.nav-cv .cv-full{display:none}.nav-cv .cv-short{display:inline}.logo > span:last-child{display:none}}
+.mm-tile.mm-cv{background:var(--blue-soft);border-color:var(--blue-soft)}
+.mm-tile.mm-cv strong{color:var(--blue)}
+
+/* =========================================================
+   STORY — scroll-driven chapters
+   ========================================================= */
+.story-cue{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:700;color:var(--muted);transition:color .3s}
+.story-cue:hover{color:var(--blue)}
+.cue-line{position:relative;width:2px;height:28px;border-radius:2px;background:var(--line);overflow:hidden}
+.cue-line::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--blue);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
+
+.story-head{display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(28px,4vw,56px)}
+.story-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(20px,4vw,64px);align-items:start}
+.story-steps{display:flex;flex-direction:column;gap:clamp(24px,20vh,220px);padding-block:8vh 18vh}
+.story-step .tile{transition:opacity .6s var(--ease-out),transform .6s var(--ease-out),border-color .4s;opacity:.35;transform:scale(.97)}
+.story-step.is-on .tile{opacity:1;transform:none;border-color:rgba(36,66,255,.35)}
+.story-step .tile--blue{border-color:var(--blue)!important}
+.story-k{font-family:var(--f-head);font-weight:700;font-size:15px;color:var(--blue)}
+.tile--blue .story-k{color:var(--light)}
+.story-step .muted em{font-style:normal;color:var(--ink);font-weight:600}
+.story-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:6px}
+.story-stage-wrap{position:sticky;top:110px}
+.story-stage{aspect-ratio:4/4.2;max-height:calc(100vh - 140px);justify-content:space-between;gap:12px}
+.stage-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.stage-title{font-family:var(--f-head);font-weight:700;font-size:18px;color:var(--blue-tint);transition:opacity .3s}
+.stage-art{position:relative;flex:1;min-height:0}
+.sv{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:translateY(16px) scale(.96);transition:opacity .6s var(--ease-out),transform .8s var(--ease-out)}
+.sv.on{opacity:1;transform:none}
+.sv .dr{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1.6s var(--ease-out) .1s}
+.sv.on .dr{stroke-dashoffset:0}
+.sv .pop-in{opacity:0;transform:scale(.6);transform-box:fill-box;transform-origin:center;transition:all .7s var(--ease-out) .5s}
+.sv .pop-in.d2,.sv .dr.d2{transition-delay:.85s}
+.sv.on .pop-in{opacity:1;transform:none}
+.sv .blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sv .spark{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.4}}
+.sv .lines rect{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform .8s var(--ease-out) .6s}
+.sv.on .lines rect{transform:none}
+.sv .slide-l,.sv .slide-r,.sv .merge{transition:all .9s var(--ease)}
+.sv .slide-l{transform:translateX(-30px)}.sv .slide-r{transform:translateX(30px)}
+.sv.on .slide-l{transform:translateX(70px);opacity:0;transition-delay:.9s}
+.sv.on .slide-r{transform:translateX(-70px);opacity:0;transition-delay:.9s}
+.sv .merge{opacity:0;transform:scale(.7);transform-box:fill-box;transform-origin:center}
+.sv.on .merge{opacity:1;transform:none;transition-delay:1.4s}
+.sv .orbit{transform-origin:200px 150px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sv .ping-ring{transform-box:fill-box;transform-origin:center;animation:ring 2s var(--ease-out) infinite}
+@keyframes ring{from{transform:scale(.5);opacity:1}to{transform:scale(1.6);opacity:0}}
+.stage-foot{display:flex;align-items:center;gap:16px}
+.stage-dots{display:flex;gap:6px}
+.stage-dots i{width:8px;height:8px;border-radius:999px;background:rgba(246,245,240,.25);transition:all .4s var(--ease-out)}
+.stage-dots i.on{width:26px;background:var(--blue)}
+.stage-bar{flex:1;height:3px;border-radius:3px;background:rgba(246,245,240,.15);overflow:hidden}
+.stage-bar b{display:block;height:100%;background:var(--blue-tint);transform-origin:left;transform:scaleX(0)}
+
+@media (max-width:900px){
+  .story-grid{grid-template-columns:1fr}
+  .story-stage-wrap{order:-1;top:76px;z-index:2}
+  .story-stage{aspect-ratio:auto;height:min(36vh,280px);padding:16px 18px}
+  .story-steps{gap:22vh;padding-block:4vh 20vh}
+  .story-step .tile{opacity:.25}
+}
+@media (prefers-reduced-motion:reduce){
+  .sv,.sv *{transition:none!important;animation:none!important}
+  .story-step .tile{opacity:1;transform:none}
+}
