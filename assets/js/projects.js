@@ -26,7 +26,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Healthcare", "UAE"],
     tech: ["Next.js", "React", "Google Tag Manager"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#E21E34", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Website for Aster Clinic, a healthcare provider in the UAE offering medical consultations, specialist care and preventive health packages.",
     features: ["Find a Clinic", "Find a Doctor", "Specialities", "Online appointment booking", "Aster at Home", "Patient care & insurance info", "Blog", "Callback request form"]
   },
@@ -43,7 +43,7 @@ window.SKT_PROJECTS = [
     tags: ["Real Estate", "Bangalore"],
     tech: ["WordPress", "Elementor", "Google Tag Manager"],
     brand: "#012169",
-    c1: "#012169", c2: "#F6F5F0", c3: "#8EA0FF", mock: "browser",
+    c1: "#012169", c2: "#F5F0E8", c3: "#C9B8FF", mock: "browser",
     summary: "Website for Coldwell Banker South India, a Bangalore real estate agency helping clients buy, sell and invest in residential and commercial property.",
     features: ["Property listings by type", "Signature Selection areas", "Franchise opportunities", "BDA e-auctions", "Agent profiles", "Blog & FAQs", "Careers", "Enquiry forms"]
   },
@@ -59,7 +59,7 @@ window.SKT_PROJECTS = [
     cats: ["tech"],
     tags: ["SaaS", "Shopify App"],
     tech: ["Next.js", "React", "v0.dev"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "phones",
+    c1: "#7038E2", c2: "#E21E34", c3: "#C9B8FF", mock: "phones",
     summary: "Product website for CleverCat, a Shopify app that turns videos — including Instagram Reels — into shoppable content customers can buy from directly.",
     features: ["Feature showcase", "Video carousel & reel feed demos", "Competitor price comparison", "Customer testimonials", "FAQ", "Sign-up & book-a-demo"]
   },
@@ -75,7 +75,7 @@ window.SKT_PROJECTS = [
     cats: ["realestate"],
     tags: ["Real Estate", "Dubai"],
     tech: ["WordPress"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#1C1C1C", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Website for HKW Wealth, a real estate and wealth advisory firm in Business Bay, Dubai, offering property investment guidance and strategic advisory.",
     features: ["About & core expertise", "Real estate services", "Strategy & advisory pages", "Project showcase", "Client testimonials", "Careers", "Contact"]
   },
@@ -91,7 +91,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Sports", "Bangalore"],
     tech: ["Nuxt (Vue)", "Hudle booking", "Google Tag Manager"],
-    c1: "#111111", c2: "#2442FF", c3: "#8EA0FF", mock: "phones",
+    c1: "#141414", c2: "#E21E34", c3: "#C9B8FF", mock: "phones",
     summary: "Website for Padel Pro India, a padel club in Whitefield, Bangalore, offering court booking, coaching, tournaments and corporate events.",
     features: ["Court booking (Hudle & WhatsApp)", "Coaching", "Tournaments & events", "Corporate events", "Blog", "FAQs", "Contact"]
   },
@@ -107,7 +107,7 @@ window.SKT_PROJECTS = [
     cats: ["ecommerce"],
     tags: ["E-commerce", "Fitness"],
     tech: ["Shopify", "Google Tag Manager"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#FF3D5E", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Online store for Pumpd, an Indian health, fitness and nutrition supplement brand.",
     features: ["Shop by concern", "Shop by category", "New launches & combo packs", "Accessories", "Blog", "Help center", "Cart & checkout"]
   },
@@ -123,7 +123,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Interior Design", "Bangalore"],
     tech: ["WordPress", "PixelYourSite", "Meta Pixel", "LinkedIn Insight Tag"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#2A1458", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Website for Chattels Design, an interior design firm in Bangalore with a Hyderabad branch.",
     features: ["Services: rooms, kitchens, wardrobes, furnishings", "Project portfolio", "Home tours", "Client testimonials", "Blog & FAQs", "Consultation forms"]
   },
@@ -140,7 +140,7 @@ window.SKT_PROJECTS = [
     tags: ["AI", "Malaysia"],
     tech: ["HTML/CSS/JS", "Netlify"],
     brand: "#031321",
-    c1: "#031321", c2: "#F6F5F0", c3: "#8EA0FF", mock: "dashboard",
+    c1: "#031321", c2: "#F5F0E8", c3: "#C9B8FF", mock: "dashboard",
     summary: "Website for ASER AI, a Malaysia-based predictive risk intelligence company helping operators and insurers spot and act on developing risks, starting with battery energy storage systems.",
     features: ["Platform overview (Pantheon)", "Solutions: battery storage, insurance, R&D", "About & leadership", "Careers", "Investors", "News"]
   },
@@ -156,7 +156,7 @@ window.SKT_PROJECTS = [
     cats: ["ecommerce"],
     tags: ["E-commerce", "Pet Care"],
     tech: ["Shopify"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "phones",
+    c1: "#E21E34", c2: "#E21E34", c3: "#C9B8FF", mock: "phones",
     summary: "Online store for Furvital, a pet supplement and wellness brand based in Chandigarh.",
     features: ["Product shop", "Search & wishlist", "Cart & checkout", "News blog", "Customer testimonials", "Store policies"]
   },
@@ -172,7 +172,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Sports", "Malaysia"],
     tech: ["Nuxt (Vue)", "Playtomic booking", "Google Tag Manager"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "phones",
+    c1: "#7038E2", c2: "#E21E34", c3: "#C9B8FF", mock: "phones",
     summary: "Website for Padel Pro Johor Bahru, a padel club offering court rentals and coaching in Johor Bahru, Malaysia.",
     features: ["Online court booking (Playtomic & WhatsApp)", "Coaching", "Services", "Blog", "FAQs", "Contact"]
   },
@@ -189,7 +189,7 @@ window.SKT_PROJECTS = [
     tags: ["Real Estate", "Hubli"],
     tech: ["WordPress", "Empiral theme", "Slider Revolution"],
     brand: "#012169",
-    c1: "#012169", c2: "#F6F5F0", c3: "#8EA0FF", mock: "browser",
+    c1: "#012169", c2: "#F5F0E8", c3: "#C9B8FF", mock: "browser",
     summary: "Website for CB Mourya Concepts, a Coldwell Banker South India franchise partner in Hubli helping clients buy, sell and invest in plots, land and property.",
     features: ["Property listings", "Location & category filters", "Hubli market guide", "Affiliate partner programme", "Testimonials", "Contact"]
   },
@@ -205,7 +205,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Home Decor", "Bengaluru"],
     tech: ["Next.js", "React", "Netlify"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#1C1C1C", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Website for Fourthwall Terrains, a Bengaluru home decor brand making handcrafted stone pots paired with curated plants.",
     features: ["About the brand", "Gifting", "Product catalogue", "Crafting process", "Testimonials", "FAQ", "Contact"]
   },
@@ -221,7 +221,7 @@ window.SKT_PROJECTS = [
     cats: ["tech"],
     tags: ["IT Services", "Chandigarh"],
     tech: ["React", "Google Tag Manager", "Meta Pixel"],
-    c1: "#E4E3DC", c2: "#2442FF", c3: "#8EA0FF", mock: "dashboard",
+    c1: "#FF3D5E", c2: "#E21E34", c3: "#C9B8FF", mock: "dashboard",
     summary: "Website for Asvayuk Technologies, a web design and development company in Chandigarh that also offers SEO and digital marketing.",
     features: ["Services", "Web design & development", "SEO", "Digital marketing", "Contact"]
   },
@@ -237,7 +237,7 @@ window.SKT_PROJECTS = [
     cats: ["business"],
     tags: ["Hospitality", "In progress"],
     tech: [],
-    c1: "#111111", c2: "#2442FF", c3: "#8EA0FF", mock: "browser",
+    c1: "#141414", c2: "#E21E34", c3: "#C9B8FF", mock: "browser",
     summary: "Website for ZYNQ, a bar and venue with live music, cocktails, dining and stays. This project is currently in progress.",
     features: ["Suites & room listings", "Party hall", "Cuisine & events", "Online room booking", "Guest testimonials", "Instagram feed"]
   }

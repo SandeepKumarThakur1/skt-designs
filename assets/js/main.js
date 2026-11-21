@@ -507,8 +507,8 @@
     set('tech', (p.tech && p.tech.length ? p.tech : ['Details coming soon']).map(function (t) { return '<li>' + t + '</li>'; }).join(''));
     $$('[data-f="tech-short"]', d).forEach(function (n) { n.textContent = (p.tech && p.tech.length) ? p.tech.slice(0, 2).join(', ') : '—'; });
     loadShots(d);
-    set('g2', '<div class="type-spec" style="color:' + (isDark(p.c3) ? '#F6F5F0' : '#111111') + '"><span>Typeface</span><b>Aa</b><span>Headings · Body</span></div>');
-    set('palette', '<div class="palette">' + [p.c1, p.c2, p.c3].map(function (c) { return '<span style="background:' + c + ';color:' + (isDark(c) ? '#F6F5F0' : '#111111') + '">' + c.toUpperCase() + '</span>'; }).join('') + '</div>');
+    set('g2', '<div class="type-spec" style="color:' + (isDark(p.c3) ? '#F5F0E8' : '#111111') + '"><span>Typeface</span><b>Aa</b><span>Headings · Body</span></div>');
+    set('palette', '<div class="palette">' + [p.c1, p.c2, p.c3].map(function (c) { return '<span style="background:' + c + ';color:' + (isDark(c) ? '#F5F0E8' : '#111111') + '">' + c.toUpperCase() + '</span>'; }).join('') + '</div>');
     set('g4', mockHTML(Object.assign({}, p, { mock: p.mock === 'dashboard' ? 'dashboard' : (p.mock === 'phones' ? 'browser' : 'phones') })));
     var n = $('[data-f="next"]', d);
     if (n) { n.href = 'project-details.html?p=' + nx.slug; n.setAttribute('data-label', nx.title); $('[data-f="next-title"]', d).textContent = nx.title; }

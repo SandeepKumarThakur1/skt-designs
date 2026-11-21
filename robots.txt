@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sktdesign.netlify.app/sitemap.xml
