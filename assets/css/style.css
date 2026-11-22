@@ -1102,7 +1102,7 @@ html[data-theme="light"]{
 .rail-btn{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);transition:all .3s}
 .rail-btn:hover{background:var(--red);border-color:var(--red);color:var(--light)}
 .rail-btn svg{width:18px;height:18px}
-.rail-prog{width:120px;height:3px;border-radius:3px;background:var(--line);overflow:hidden}.rail-prog b{display:block;height:100%;width:100%;background:var(--red);transform-origin:left;transform:scaleX(.2)}
+.rail-prog{width:100px;height:3px;border-radius:3px;background:var(--line);overflow:hidden}.rail-prog b{display:block;height:100%;width:100%;background:var(--red);transform-origin:left;transform:scaleX(.2)}
 .work-rail{margin-inline:calc(var(--pad) * -1)}
 .work-track{display:flex;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 18px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain}
 .work-track::-webkit-scrollbar{display:none}
