@@ -66,7 +66,7 @@
 
   /* honest counters from project data */
   var P = window.SKT_PROJECTS || [];
-  var vals = { countries: Object.keys(P.reduce(function (o, p) { var c = (p.location || '').split(',').pop().trim(); if (c) o[c] = 1; return o; }, {})).length, projects: P.length, industries: Object.keys(P.reduce(function (o, p) { if (p.industry) o[p.industry] = 1; return o; }, {})).length };
+  var vals = { countries: Object.keys(P.reduce(function (o, p) { var c = p.country != null ? p.country : (p.location || '').split(',').pop().trim(); if (c && c !== '—') o[c] = 1; return o; }, {})).length, projects: P.length, industries: Object.keys(P.reduce(function (o, p) { if (p.industry) o[p.industry] = 1; return o; }, {})).length };
   document.querySelectorAll('[data-count]').forEach(function (el) {
     var target = vals[el.getAttribute('data-count')] || 0;
     var io2 = 'IntersectionObserver' in window ? new IntersectionObserver(function (en) {

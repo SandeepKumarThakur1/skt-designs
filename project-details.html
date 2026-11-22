@@ -35,6 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/showcase.css">
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -78,57 +79,7 @@
 </nav>
 <main id="main"><span id="top"></span>
 
-<div data-project-detail>
-<section class="page-hero">
-  <div class="container">
-    <div class="bento">
-      <div class="tile tile-main c-8 pop" data-hero style="--i:0;min-height:min(48vh,440px)">
-        <div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="projects.html">Projects</a><span>/</span><span data-f="title">Project</span></div>
-        <span class="eyebrow" style="align-self:flex-start"><span class="dot dot--live"></span><span data-f="status">Live</span></span>
-        <h1 class="t-xl" data-f="title">Project</h1>
-        <div class="tile-foot"><p class="lead" data-f="tagline"></p>
-          <a class="btn magnetic" data-f="url" href="#" target="_blank" rel="noopener">Visit live website<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-      </div>
-      <dl class="tile tile--dark meta-tile c-4 pop" data-hero style="--i:1;display:grid;grid-template-columns:1fr;align-content:space-between;margin:0">
-        <div><dt>Industry</dt><dd data-f="industry"></dd></div>
-        <div><dt>Location</dt><dd data-f="location"></dd></div>
-        <div><dt>Project</dt><dd data-f="type"></dd></div>
-        <div><dt>Built with</dt><dd data-f="tech-short"></dd></div>
-        <div><dt>Website</dt><dd><a data-f="url" href="#" target="_blank" rel="noopener" style="color:var(--blue-tint)"><span data-f="domain"></span> ↗</a></dd></div>
-      </dl>
-      <div class="tile pd-media c-12 pop" data-hero style="--i:2" data-f="hero"></div>
-    </div>
-  </div>
-</section>
-<section class="section-tight">
-  <div class="container">
-    <div class="bento">
-      <div class="tile c-6 pop" style="--i:0"><span class="eyebrow" style="align-self:flex-start"><b>01</b>Overview</span><p class="pd-text" data-f="summary"></p></div>
-      <div class="tile tile--soft c-6 pop" style="--i:1"><span class="eyebrow" style="align-self:flex-start"><b>02</b>Key pages &amp; features</span><ul class="feat-list" data-f="features"></ul></div>
-      <div class="tile g-tile g-mobile c-5 pop" style="--i:0" data-f="g1"></div>
-      <div class="tile tile--dark c-7 pop" style="--i:1;justify-content:space-between">
-        <span class="eyebrow" style="align-self:flex-start"><b>03</b>Tools &amp; tech</span>
-        <h3 class="t-lg">Built with</h3>
-        <ul class="feat-list tech-list" data-f="tech"></ul>
-        <p class="muted" style="font-size:14px">Responsive on every screen size — the mobile view on the left is the live site.</p>
-      </div>
-            <div class="tile c-12 pop pd-process" style="--i:0">
-        <span class="eyebrow" style="align-self:flex-start"><b>04</b>How it came together</span>
-        <ol class="pdp"><li><b>Discover</b><span class="muted">Goals, audience and the pages <span data-f="title"></span> needed.</span></li><li><b>Design</b><span class="muted">Layouts and UI shaped around a <span data-f="industry-lc"></span> audience.</span></li><li><b>Build</b><span class="muted">Developed with <span data-f="tech-short"></span>, responsive on every screen.</span></li><li><b>Launch</b><span class="muted">Tested, tracked and handed over. Status: <span data-f="status"></span>.</span></li></ol>
-      </div>
-      <div class="tile tile--soft c-12 pop" style="--i:0"><span class="eyebrow" style="align-self:flex-start"><b>05</b>More like this</span><div class="work-rail"><div class="work-track" data-similar></div></div></div>
-      <a class="tile tile--blue c-12 pop c-tile" data-f="url" href="#" target="_blank" rel="noopener" style="flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center">
-        <div style="display:flex;flex-direction:column;gap:8px"><span class="tile-label">See it live</span><span class="t-lg" data-f="domain"></span><span class="muted" data-f="live-note"></span></div>
-        <span class="btn btn--light" style="pointer-events:none">Open website<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a class="tile next-tile c-12 pop" href="projects.html" data-f="next" data-cursor="Next">
-        <span class="tile-label">Next project</span>
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap"><span class="t-xl" data-f="next-title">Next</span><span class="btn btn--light" style="pointer-events:none">View project<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></div>
-      </a>
-    </div>
-  </div>
-</section>
-</div>
+<div class="cs" data-case></div>
 </main>
 
 <footer class="footer">
@@ -171,6 +122,7 @@
   </div>
 </footer>
 <script src="assets/js/projects.js"></script>
+<script src="assets/js/showcase.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/theme.js"></script>
 </body>
