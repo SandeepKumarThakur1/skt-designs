@@ -36,6 +36,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/posters.css">
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -212,10 +213,69 @@
   </div>
 </section>
 
+<!-- ===== Poster wall ===== -->
+<section class="section pw-sec" aria-labelledby="pw-title">
+  <div class="container">
+    <div class="work-head">
+      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>04</b>The poster wall</span><h2 class="t-xl" id="pw-title" data-rv>Four services,<br>one loud wall.</h2></div>
+      <p class="lead fade" style="max-width:420px">The campaign posters I designed for SKT Design. Flip through them, or tap one to see it full size.</p>
+    </div>
+    <div class="pw tile pop" data-pw style="--accent:#E21E34">
+      <div class="pw-glow" aria-hidden="true"></div>
+      <div class="pw-grid-lines" aria-hidden="true"><i></i><i></i></div>
+      <div class="pw-info">
+        <div class="pw-count" aria-hidden="true"><b class="pw-n">01</b><span>/ 05</span></div>
+        <div class="pw-copy" aria-live="polite">
+          <span class="pw-k">Studio</span>
+          <h3 class="pw-t">Beyond the template.</h3>
+          <p class="pw-d">The studio poster: custom websites that bring in customers. Four services, one promise: nothing off the shelf.</p>
+          <div class="pw-tags"><span>Custom design</span><span>Lead-focused</span><span>All 4 services</span></div>
+        </div>
+        <div class="pw-ctrl">
+          <button class="rail-btn" type="button" data-pw-prev aria-label="Previous poster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <button class="rail-btn" type="button" data-pw-next aria-label="Next poster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <div class="pw-dots"><button type="button" class="pw-dot on" data-go="0" aria-label="Show poster 1"><i></i></button><button type="button" class="pw-dot" data-go="1" aria-label="Show poster 2"><i></i></button><button type="button" class="pw-dot" data-go="2" aria-label="Show poster 3"><i></i></button><button type="button" class="pw-dot" data-go="3" aria-label="Show poster 4"><i></i></button><button type="button" class="pw-dot" data-go="4" aria-label="Show poster 5"><i></i></button></div>
+        </div>
+        <a href="contact.html" class="btn magnetic pw-cta" data-label="Contact">Want one like this?<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="pw-deck" aria-roledescription="carousel" aria-label="Service posters">
+        <button class="pw-card" type="button" style="--c:#E21E34" data-i="0" data-k="Studio" data-t="Beyond the template." data-d="The studio poster: custom websites that bring in customers. Four services, one promise: nothing off the shelf." data-tags="Custom design|Lead-focused|All 4 services" data-full="assets/img/posters/poster-studio.webp" data-cursor="View" aria-label="Studio: Beyond the template. (open poster)">
+          <picture><source srcset="assets/img/posters/poster-studio-sm.webp 550w, assets/img/posters/poster-studio.webp 1100w" sizes="(max-width:860px) 60vw, 380px" type="image/webp"><img src="assets/img/posters/poster-studio.jpg" alt="SKT Design services poster: Beyond the template, custom websites that bring in customers" width="1100" height="1600" loading="lazy" decoding="async"></picture>
+          <span class="pw-shine" aria-hidden="true"></span>
+        </button>
+        <button class="pw-card" type="button" style="--c:#6A2BE0" data-i="1" data-k="Service 01" data-t="Premium &amp; trusted." data-d="Business websites that build trust and bring enquiries, with a brand-first look that works on every screen." data-tags="Brand-first|Fast|Every screen" data-full="assets/img/posters/poster-business.webp" data-cursor="View" aria-label="Service 01: Premium & trusted. (open poster)">
+          <picture><source srcset="assets/img/posters/poster-business-sm.webp 550w, assets/img/posters/poster-business.webp 1100w" sizes="(max-width:860px) 60vw, 380px" type="image/webp"><img src="assets/img/posters/poster-business.jpg" alt="Business Websites poster: Premium and trusted, websites that build trust and bring enquiries" width="1100" height="1600" loading="lazy" decoding="async"></picture>
+          <span class="pw-shine" aria-hidden="true"></span>
+        </button>
+        <button class="pw-card" type="button" style="--c:#13896F" data-i="2" data-k="Service 02" data-t="Convert every click." data-d="Landing pages built for one goal: leads. One clear message, one strong call to action, nothing in the way." data-tags="One goal|Fast|Strong CTA" data-full="assets/img/posters/poster-landing.webp" data-cursor="View" aria-label="Service 02: Convert every click. (open poster)">
+          <picture><source srcset="assets/img/posters/poster-landing-sm.webp 550w, assets/img/posters/poster-landing.webp 1100w" sizes="(max-width:860px) 60vw, 380px" type="image/webp"><img src="assets/img/posters/poster-landing.jpg" alt="Landing Pages poster: Convert every click, landing pages built for one goal, leads" width="1100" height="1600" loading="lazy" decoding="async"></picture>
+          <span class="pw-shine" aria-hidden="true"></span>
+        </button>
+        <button class="pw-card" type="button" style="--c:#7038E2" data-i="3" data-k="Service 03" data-t="Sell while you sleep." data-d="Online stores that make buying simple, with easy checkout, mobile-first product pages and a design built to sell." data-tags="Easy checkout|Mobile-first|Built to sell" data-full="assets/img/posters/poster-stores.webp" data-cursor="View" aria-label="Service 03: Sell while you sleep. (open poster)">
+          <picture><source srcset="assets/img/posters/poster-stores-sm.webp 550w, assets/img/posters/poster-stores.webp 1100w" sizes="(max-width:860px) 60vw, 380px" type="image/webp"><img src="assets/img/posters/poster-stores.jpg" alt="Online Stores poster: Sell while you sleep, online stores that make buying simple" width="1100" height="1600" loading="lazy" decoding="async"></picture>
+          <span class="pw-shine" aria-hidden="true"></span>
+        </button>
+        <button class="pw-card" type="button" style="--c:#D6206A" data-i="4" data-k="Service 04" data-t="Refresh your old site." data-d="Website redesigns that feel brand new: a modern look, faster pages and more enquiries from the traffic you already have." data-tags="Modern look|Faster|More enquiries" data-full="assets/img/posters/poster-redesign.webp" data-cursor="View" aria-label="Service 04: Refresh your old site. (open poster)">
+          <picture><source srcset="assets/img/posters/poster-redesign-sm.webp 550w, assets/img/posters/poster-redesign.webp 1100w" sizes="(max-width:860px) 60vw, 380px" type="image/webp"><img src="assets/img/posters/poster-redesign.jpg" alt="Website Redesigns poster: Refresh your old site, redesigns that feel brand new" width="1100" height="1600" loading="lazy" decoding="async"></picture>
+          <span class="pw-shine" aria-hidden="true"></span>
+        </button>
+      </div>
+      <span class="pw-hint" aria-hidden="true">Drag, swipe or use ← →</span>
+    </div>
+    <div class="pw-marquee" aria-hidden="true"><div class="pw-mq-track"><span>Business Websites</span><i>✦</i><span>Landing Pages</span><i>✦</i><span>Online Stores</span><i>✦</i><span>Redesigns</span><i>✦</i><span>Business Websites</span><i>✦</i><span>Landing Pages</span><i>✦</i><span>Online Stores</span><i>✦</i><span>Redesigns</span><i>✦</i></div></div>
+  </div>
+  <dialog class="pw-lb" aria-label="Poster viewer">
+    <button class="pw-lb-x" type="button" data-pw-close aria-label="Close">✕</button>
+    <button class="pw-lb-nav l" type="button" data-pw-lprev aria-label="Previous poster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <figure><img class="pw-lb-img" src="" alt=""><figcaption class="pw-lb-cap"></figcaption></figure>
+    <button class="pw-lb-nav r" type="button" data-pw-lnext aria-label="Next poster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </dialog>
+</section>
+
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="work-head">
-      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>04</b>Selected work</span><h2 class="t-xl" data-rv>Recent client work.</h2></div>
+      <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow fade" style="align-self:flex-start"><b>05</b>Selected work</span><h2 class="t-xl" data-rv>Recent client work.</h2></div>
       <div class="rail-ctrl fade"><a href="projects.html" class="link-arrow" data-label="Projects" style="margin-right:12px">All projects <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><span class="rail-prog" aria-hidden="true"><b></b></span><button class="rail-btn" type="button" data-rail-prev aria-label="Previous projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="rail-btn" type="button" data-rail-next aria-label="Next projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
     </div>
     <div class="work-rail"><div class="work-track" data-projects data-limit="8" aria-label="Selected projects, scroll sideways"></div></div>
@@ -227,7 +287,7 @@
 <section class="section">
   <div class="container">
     <div class="sec-head">
-      <span class="eyebrow fade" style="align-self:flex-start"><b>05</b>My style, decoded</span>
+      <span class="eyebrow fade" style="align-self:flex-start"><b>06</b>My style, decoded</span>
       <h2 class="t-xl" data-rv>Five things you'll<br>see in my work.</h2>
       <p class="lead fade">Every project is different, but the way I think about design stays the same. Hover or tap the tiles to play with each one.</p>
     </div>
@@ -270,7 +330,7 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="sec-head">
-      <span class="eyebrow fade" style="align-self:flex-start"><b>06</b>Why it matters</span>
+      <span class="eyebrow fade" style="align-self:flex-start"><b>07</b>Why it matters</span>
       <h2 class="t-xl" data-rv>Template vs.<br>crafted.</h2>
       <p class="lead fade">Drag the handle. Same business, same content, two very different first impressions.</p>
     </div>
@@ -304,7 +364,7 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="sec-head">
-      <span class="eyebrow fade" style="align-self:flex-start"><b>07</b>Working with me</span>
+      <span class="eyebrow fade" style="align-self:flex-start"><b>08</b>Working with me</span>
       <h2 class="t-xl" data-rv>What you can<br>count on.</h2>
     </div>
     <div class="bento">
@@ -379,5 +439,6 @@
 <script src="assets/js/projects.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/posters.js"></script>
 </body>
 </html>

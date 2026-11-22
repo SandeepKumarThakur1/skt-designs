@@ -1,0 +1,130 @@
+/* =========================================================
+   POSTER WALL — fanned, colour-shifting poster deck (home)
+   ========================================================= */
+.pw{
+  --accent:#E21E34;
+  display:grid;grid-template-columns:minmax(280px,5fr) 7fr;align-items:center;gap:clamp(20px,3vw,48px);
+  min-height:clamp(560px,52vw,720px);padding:clamp(24px,3.4vw,56px);
+  background:#0E0B14;color:#F5F0E8;border-color:rgba(255,255,255,.08);
+  transition:border-color .8s;
+}
+.pw::after{display:none}
+.pw-glow{position:absolute;inset:-20%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(42% 52% at 70% 48%,color-mix(in srgb,var(--accent) 62%,transparent),transparent 70%),
+    radial-gradient(30% 40% at 12% 100%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%);
+  filter:blur(10px);transition:background 1s var(--ease-out)}
+@supports not (background:color-mix(in srgb,red 50%,transparent)){
+  .pw-glow{background:radial-gradient(42% 52% at 70% 48%,var(--accent),transparent 70%);opacity:.55}
+}
+.pw-grid-lines{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.pw-grid-lines i{position:absolute;background:rgba(245,240,232,.09)}
+.pw-grid-lines i:nth-child(1){left:0;right:0;bottom:14%;height:1px}
+.pw-grid-lines i:nth-child(2){top:0;bottom:0;left:41.6%;width:1px}
+
+/* ---- info column ---- */
+.pw-info{display:flex;flex-direction:column;gap:clamp(18px,2.2vw,28px);position:relative;z-index:3}
+.pw-count{display:flex;align-items:baseline;gap:8px;font-family:var(--f-head);font-weight:700;letter-spacing:-.04em}
+.pw-n{font-size:clamp(56px,6vw,96px);line-height:.85;color:#F5F0E8;display:inline-block}
+.pw-count span{font-size:20px;color:rgba(245,240,232,.5)}
+.pw-copy{display:flex;flex-direction:column;gap:14px;min-height:clamp(200px,17vw,240px)}
+.pw-k{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--cream)}
+.pw-t{font-size:clamp(34px,3.6vw,56px);letter-spacing:-.04em;line-height:.98;color:#fff}
+.pw-d{color:rgba(245,240,232,.72);max-width:380px}
+.pw-tags{display:flex;flex-wrap:wrap;gap:8px}
+.pw-tags span{padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid rgba(245,240,232,.18);background:rgba(255,255,255,.04)}
+.pw-copy.swap > *{animation:pwIn .7s var(--ease-out) both}
+.pw-copy.swap > *:nth-child(2){animation-delay:.05s}
+.pw-copy.swap > *:nth-child(3){animation-delay:.1s}
+.pw-copy.swap > *:nth-child(4){animation-delay:.15s}
+.pw-n.swap{animation:pwNum .7s var(--ease-out) both}
+@keyframes pwIn{from{opacity:0;transform:translateY(18px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes pwNum{from{opacity:0;transform:translateY(60%) rotate(6deg)}to{opacity:1;transform:none}}
+
+.pw-ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pw .rail-btn{border-color:rgba(245,240,232,.22);color:#F5F0E8}
+.pw .rail-btn:hover{background:#F5F0E8;color:#0B0B0B;border-color:#F5F0E8}
+.pw-dots{display:flex;gap:6px;margin-left:8px}
+.pw-dot{width:26px;height:26px;display:grid;place-items:center}
+.pw-dot i{display:block;width:8px;height:8px;border-radius:99px;background:rgba(245,240,232,.3);position:relative;overflow:hidden;transition:width .5s var(--ease-out),background .3s}
+.pw-dot.on i{width:26px;background:rgba(245,240,232,.22)}
+.pw-dot.on i::after{content:"";position:absolute;inset:0;background:#F5F0E8;transform-origin:left;transform:scaleX(0);animation:pwBar var(--dur,5s) linear forwards}
+.pw.paused .pw-dot.on i::after{animation-play-state:paused}
+@keyframes pwBar{to{transform:scaleX(1)}}
+.pw-cta{align-self:flex-start}
+
+/* ---- the deck ---- */
+.pw-deck{--spread:27%;position:relative;height:clamp(440px,42vw,600px);perspective:1400px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.pw-card{
+  --d:0;--ad:0;--tx:0deg;--ty:0deg;
+  position:absolute;left:50%;top:50%;height:100%;aspect-ratio:1100/1600;
+  border-radius:clamp(12px,1.4vw,20px);overflow:hidden;padding:0;
+  transform:
+    translate(-50%,-50%)
+    translateX(calc(var(--d) * var(--spread,34%)))
+    translateY(calc(var(--ad) * 4%))
+    rotate(calc(var(--d) * 7deg))
+    scale(calc(1 - var(--ad) * .12))
+    rotateX(var(--tx)) rotateY(var(--ty));
+  z-index:calc(10 - var(--ad));
+  filter:brightness(calc(1 - var(--ad) * .32)) saturate(calc(1 - var(--ad) * .15));
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08);
+  transition:transform .9s var(--ease-out),filter .9s var(--ease-out),opacity .6s;
+  will-change:transform;cursor:pointer;
+}
+.pw-card.far{opacity:0;pointer-events:none}
+.pw-card.on{box-shadow:0 50px 100px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.14),0 0 80px -10px color-mix(in srgb,var(--c) 70%,transparent)}
+.pw-card.tilting{transition:transform .15s linear,filter .9s var(--ease-out)}
+.pw-card img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.pw-card picture{display:block;height:100%}
+.pw-shine{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(60% 50% at var(--sx,50%) var(--sy,30%),rgba(255,255,255,.28),transparent 60%);mix-blend-mode:soft-light}
+.pw-card.on:hover .pw-shine{opacity:1}
+.pw-card:focus-visible{outline:3px solid var(--cream);outline-offset:4px}
+.pw-hint{position:absolute;right:clamp(20px,3vw,40px);bottom:clamp(16px,2vw,24px);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,232,.45);z-index:3}
+
+/* ---- marquee ---- */
+.pw-marquee{overflow:hidden;margin-top:clamp(18px,2vw,28px);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pw-mq-track{display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);width:max-content;animation:pwMq 28s linear infinite}
+.pw-mq-track span{font-family:var(--f-head);font-weight:800;font-size:clamp(36px,5.4vw,84px);letter-spacing:-.045em;line-height:1.05;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--ink);transition:color .4s}
+.pw-mq-track span:hover{color:var(--blue);-webkit-text-stroke-color:var(--blue)}
+.pw-mq-track i{font-style:normal;color:var(--blue);font-size:clamp(22px,2.6vw,40px)}
+@keyframes pwMq{to{transform:translateX(-50%)}}
+.pw-marquee:hover .pw-mq-track{animation-play-state:paused}
+
+/* ---- lightbox ---- */
+.pw-lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0;color:#F5F0E8;overflow:hidden}
+.pw-lb::backdrop{background:rgba(8,6,12,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pw-lb[open]{display:grid;place-items:center;animation:pwFade .35s var(--ease-out)}
+.pw-lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.pw-lb-img{max-height:calc(100vh - 110px);max-width:min(92vw,700px);width:auto;height:auto;border-radius:18px;box-shadow:0 40px 120px -20px rgba(0,0,0,.9);animation:pwZoom .5s var(--ease-out)}
+.pw-lb-cap{font-size:14px;font-weight:700;color:rgba(245,240,232,.75)}
+.pw-lb-x{position:fixed;top:18px;right:18px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);font-size:18px;z-index:2}
+.pw-lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);z-index:2;transition:background .3s}
+.pw-lb-nav svg{width:22px}
+.pw-lb-nav.l{left:clamp(10px,3vw,40px)}.pw-lb-nav.r{right:clamp(10px,3vw,40px)}
+.pw-lb-x:hover,.pw-lb-nav:hover{background:rgba(255,255,255,.22)}
+@keyframes pwFade{from{opacity:0}}
+@keyframes pwZoom{from{opacity:0;transform:scale(.92) translateY(20px)}}
+
+/* ---- light theme: keep the stage dark, adjust marquee only ---- */
+[data-theme="light"] .pw{border-color:transparent}
+
+/* ---- responsive ---- */
+@media (max-width:900px){
+  .pw{grid-template-columns:1fr;min-height:0}
+  .pw-deck{order:-1;height:clamp(380px,100vw,520px);--spread:30%}
+  .pw-grid-lines i:nth-child(2){display:none}
+  .pw-copy{min-height:0}
+  .pw-hint{display:none}
+}
+@media (max-width:520px){
+  .pw-deck{height:clamp(340px,112vw,460px);--spread:24%}
+  .pw-count{display:none}
+  .pw-lb-nav{top:auto;bottom:20px;transform:none}
+  .pw-lb-img{max-height:calc(100vh - 160px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .pw-mq-track{animation:none}
+  .pw-card{transition:none}
+}
